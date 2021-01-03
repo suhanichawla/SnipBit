@@ -1,22 +1,32 @@
 import React from "react"
-import {Switch,Route} from "react-router-dom"
+import {Switch,Route,withRouter,Redirect} from "react-router-dom"
+import {connect} from "react-redux";
 import Authform from "./Auth/authform";
 import Intro from "./intro";
 import Editor from './editor';
 import Home from './home'
+import {authUser} from "../store/actions/auth"
+import {removeError} from "../store/actions/error"
 import Codespace from './codespace'
 const Main= props =>{
+    var {currentUser}=props;
     return(
         <div className>
             <Switch>
-    <Route exact path="/" render={props => <Intro {...props} isSignup={false}/>}></Route>
+    <Route exact path="/" render={props => <Home  currentUser={currentUser} {...props}/>}></Route>
     <Route exact path="/register" render={props => <Intro {...props} isSignup={true}/> }></Route>
-    <Route exact path="/home" render={props => <Home {...props}/>}></Route>
     <Route exact path="/editor" render={props => <Codespace {...props}/>}></Route>
             </Switch>
         </div>
     )
 }
+function mapStateToProps(state){
+    return({
+        currentUser:state.currentUser,
+        errors:state.errors
 
-export default Main;
-// withRouter(connect(mapStateToProps,{logout})(Navbar));
+    })
+}
+
+
+export default withRouter(connect(mapStateToProps,{authUser,removeError})(Main));

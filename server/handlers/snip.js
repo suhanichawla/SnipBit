@@ -28,7 +28,8 @@ exports.saveSnip= async function(req,res,next){
 
 exports.getSnips= async function(req,res,next){
     try{
-        let snips=await db.Snip.find({})
+        let snips=await db.Snip.find()
+        .sort({createdAt:"desc"})
         return res.status(200).json(snips)
     }catch(e){
         return next(e);

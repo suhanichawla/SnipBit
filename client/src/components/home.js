@@ -1,8 +1,16 @@
 import React from 'react'
 import './home.css'
 import Sidebar from './sidebar'
+import Intro from './intro'
 
-export default function Home() {
+export default function Home({currentUser}) {
+    if(!currentUser.isAuth){
+        return(
+        <div className="">
+            <Intro isSignup={false}/>
+        </div>
+        )
+    }else{
     return (
         <div className="home-flex">
             <Sidebar />
@@ -127,4 +135,5 @@ export default function Home() {
             
         </div>
     )
+    }
 }
