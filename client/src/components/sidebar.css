@@ -38,7 +38,7 @@
     color: #149ddd;
   }
   
-  /* Mobile Navigation */
+  /* Mobile Navigation
   .mobile-nav-toggle {
     position: fixed;
     right: 15px;
@@ -68,7 +68,7 @@
   
   .mobile-nav-active .mobile-nav-toggle i {
     color: #fff;
-  }
+  } */
   
 
   #header {

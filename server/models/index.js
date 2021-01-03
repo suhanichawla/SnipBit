@@ -9,3 +9,4 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/codepen",{
 })
 
 module.exports.User=require("./user")
+module.exports.Snip=require("./snip")
