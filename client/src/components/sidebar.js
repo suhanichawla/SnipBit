@@ -1,6 +1,7 @@
 import React from 'react'
 import './sidebar.css'
 import Avatar from '../assets/avatar.jfif'
+import {Link} from 'react-router-dom';
 
 export default function Sidebar() {
     return (
@@ -22,7 +23,7 @@ export default function Sidebar() {
 
             <nav class="nav-menu">
                 <ul>
-                <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>New Snip</span></a></li>
+                <li class="active"><a href="#hero"><i class="bx bx-home"></i><span> <Link to="/editor">New Snip</Link></span></a></li>
                 <li><a href="#about"><i class="bx bx-user"></i> <span>My Snips</span></a></li>
                 <li><a href="#skills"><i class="bx bx-book-content"></i> <span>Skills</span></a></li>
                 <li><a href="#services"><i class="bx bx-server"></i> Projects</a></li>

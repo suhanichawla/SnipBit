@@ -28,7 +28,7 @@ exports.correctUser=function(req,res,next){
     try{
         const token=req.headers.authorization.split(" ")[1]; //Bearer token
         jwt.verify(token,process.env.SECRET_KEY,(err,decoded)=>{
-            if(decoded && decoded.id===req.params.id){
+            if(decoded && decoded._id===req.params.id){
                 return next();
             }else{
                 return next({

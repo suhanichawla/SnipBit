@@ -21,7 +21,6 @@ class Authform extends Component{
     handleSubmit(e){
         e.preventDefault();
         const authType=this.props.isSignup ? "signup" :"signin";
-        console.log("yoyo")
         this.props.onAuth(authType,this.state).then(()=>{
            this.props.history.push("/")
         })

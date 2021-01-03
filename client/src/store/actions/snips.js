@@ -1,9 +1,9 @@
 
 import {apiCall} from "../../services/api"
 import {addError} from "./error"
-import {LOAD_MESSAGES,REMOVE_MESSAGES, REMOVE_ERROR} from "../actionTypes"
+import {LOAD_SNIPS,REMOVE_SNIP, REMOVE_ERROR} from "../actionTypes"
 
-export const loadMessages=snippets=>({
+export const loadSnips=snippets=>({
     type:LOAD_SNIPS,
     snippets
 })
@@ -13,26 +13,30 @@ export const remove=id=>({
   id
 })
 
-export const fetchSnips = () => {
-    return dispatch => {
+export const fetchSnips =  () => (dispatch, getState)=> {
       let {currentUser}=getState();
-      let id=currentUser.user.id;
-      return apiCall("get", "/api/users/:id/snips")
+      let id=currentUser.user._id;
+      return apiCall("get", `/api/users/${id}/snips`)
         .then(res => {
           console.log(res);
-          dispatch(loadMessages(res));
+          dispatch(loadSnips(res));
         })
         .catch(err => {
           dispatch(addError(err.message));
         });
-    };
   };
 
-  export const postMessages = text => (dispatch, getState)=>{
+  export const saveSnip = snip => (dispatch, getState)=>{
     let {currentUser}=getState();
-    let id=currentUser.user.id;
-      return apiCall("post", `/api/users/${id}/messages`,{text})
-        .then(res => {})
+    let id=currentUser.user._id;
+    var requestSnip;
+    if(snip.snipID){
+      requestSnip={code:snip.code,name:snip.name,snipID:snip.snipID}
+    }else{
+      requestSnip={code:snip.code,name:snip.name}
+    }
+      return apiCall("post", `/api/users/${id}/snips/save`,requestSnip)
+        .then(res => console.log("reslult of snip save",res))
         .catch(err => {
           dispatch(addError(err.message));
         });

@@ -7,11 +7,12 @@ import 'codemirror/mode/css/css'
 import {Controlled as ControlledEditor} from 'react-codemirror2'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCompressAlt,faExpandAlt} from '@fortawesome/free-solid-svg-icons'
+import {Link,withRouter} from "react-router-dom"
+import {connect} from "react-redux"
 
 
-export default function Editor(props) {
+function Editor(props) {
     var {displayName,language,value,onChange}=props;
-
     const [open,setOpen]=useState(true)
     function handleChange(editor,data,value){
         onChange(value)
@@ -44,3 +45,5 @@ export default function Editor(props) {
         </div>
     )
 }
+
+export default withRouter(connect(null,null)(Editor));
