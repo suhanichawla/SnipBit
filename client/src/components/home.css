@@ -40,6 +40,9 @@ body {
     border: none;
 }
 
+.white-underline{
+    color:white;
+}
 @keyframes colorChange{
     0%{
         background-color: #d5a4cf;

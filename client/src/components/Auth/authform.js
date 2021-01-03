@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 export default function Authform(props) {
     var {isSignup,buttonText,toggleMessage,toggleMessageU}=props;
@@ -31,25 +32,9 @@ export default function Authform(props) {
                 </div>
                 </div>
                 <br></br>
-            <p className="toggle-auth">{toggleMessage} <u>{toggleMessageU}</u></p>
+            <p className="toggle-auth">{toggleMessage} <Link to={isSignup ? "/" : "/register"}><u className="white-underline">{toggleMessageU}</u></Link></p>
                 
-            {/* <div class="form-group">
-                <label class="control-label" style={{color:"white"}} htmlFor="email" >Email:</label>
-                <div>          
-                    <input onChange={()=>{}} type="text" class="form-control" id="email" placeholder="Enter Email" name="email" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label" style={{color:"white"}} htmlFor="password">Password:</label>
-                <div class="col-sm-10">          
-                    <input onChange={()=>{}} type="text" class="form-control" id="email" placeholder="Enter Password" name="email" />
-                </div>
-            </div>
-            <br></br>
-            <div>
-                <button class="btn btn-primary long-button" type="button">Button</button>
-            </div>
-             */}
+            
             </form>
         </div>
     )
