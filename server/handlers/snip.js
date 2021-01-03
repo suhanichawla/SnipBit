@@ -8,13 +8,13 @@ exports.saveSnip= async function(req,res,next){
             snip=await db.Snip.create({
                 name:req.body.name,
                 code:req.body.code,
-                user:req.params.id
+                user:req.params.userID
             })
         }else{
             
             var newvalues = { $set: { name:req.body.name,
                 code:req.body.code,
-                user:req.params.id
+                user:req.params.userID
             } };
             snip=await db.Snip.findOneAndUpdate({_id:req.body.snipID},newvalues,{new: true})
         }
@@ -28,7 +28,8 @@ exports.saveSnip= async function(req,res,next){
 
 exports.getSnips= async function(req,res,next){
     try{
-        let snips=await db.Snip.find()
+        console.log("user id is",req.params.userID)
+        let snips=await db.Snip.find({user:req.params.userID})
         .sort({createdAt:"desc"})
         return res.status(200).json(snips)
     }catch(e){

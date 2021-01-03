@@ -16,7 +16,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use("/api/auth",authRoutes)
-app.use("/api/users/:id/snips",loginRequired,correctUser, snippetRoutes)
+app.use("/api/users/:userID/snips",loginRequired,correctUser, snippetRoutes)
 
 
 app.use((req,res,next)=>{

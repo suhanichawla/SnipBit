@@ -96,13 +96,7 @@ function Home(props) {
         
     })
    
-    if(!currentUser.isAuth){
-        return(
-        <div className="">
-            <Intro isSignup={false}/>
-        </div>
-        )
-    }else{
+    
     return (
         <div className="home-flex">
             <Sidebar />
@@ -116,7 +110,6 @@ function Home(props) {
             
         </div>
     )
-    }
 }
 
 function mapStateToProps(state){
