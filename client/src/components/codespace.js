@@ -27,7 +27,7 @@ function Codespace(props) {
     return ()=> clearTimeout(timeout)
   },[html,css,js])
 
-  function saveDocument(){
+  function saveDocument(fileName){
     
     var code={
       html,
@@ -35,11 +35,11 @@ function Codespace(props) {
       js
     }
     if(newFlag){
-      props.saveSnip({code,name:"firstsnip"+Math.random(20)}).then((res)=>{
+      props.saveSnip({code,name:fileName}).then((res)=>{
         console.log("snip save",res)
       })
     }else{
-      props.saveSnip({snipID:data._id,code,name:"firstsnip"+Math.random(20)}).then((res)=>{
+      props.saveSnip({snipID:data._id,code,name:data.name}).then((res)=>{
         console.log("snip save",res)
       })
     }
@@ -48,7 +48,7 @@ function Codespace(props) {
 
   return (
     <div className="App">
-      <Navbar onSave={saveDocument}/>
+      <Navbar file={newFlag ? 'untitled' : data.name} onSave={saveDocument}/>
       <div>
       <div className="pane top-pane">
         <Editor 
