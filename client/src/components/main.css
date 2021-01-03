@@ -30,6 +30,14 @@ body{
     margin-top: 1px;
 }
 
+.authform-inp[type="text"]::placeholder {
+    padding-left: 10px;
+}
+
+.authform-inp[type="password"]::placeholder {
+    padding-left: 10px;
+}
+
 .main-image{
     background-color: #040b14;
     text-align: center;
@@ -46,11 +54,15 @@ body{
     padding: 1rem;
     color: white;
     width: 25%;
-    height: 60%;
+    min-height: 60%;
     border-radius: 10px;
     opacity: 0;
     /* height: 54vh;
     width: 43vw; */
+}
+
+.mainpage-form-long{
+    min-height: 70%;
 }
 
 .toggle-auth{
@@ -86,8 +98,8 @@ body{
     0%{
         opacity: 0;
         margin-top: 100px;
-        height: 350px;
-        width:350px
+        height: 400px;
+        width:400px
     }
 	100%{
 		opacity: 1;

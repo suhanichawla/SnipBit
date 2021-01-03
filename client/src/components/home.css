@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background-color: #040b14;
+  }
+  
+
+.homeDiv{
+    color: white;
+    display: flex;
+    padding:70px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.homeDiv .card{
+    color: black;
+    width: 47%;
+    margin-left: 15px;
+}
+
+/* .home-div-parent{
+    color:white;
+    margin-top: 20px;
+} */
+
+.home-heading{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+.card-buttons{
+    padding: 8px;
+    margin-right: 15px;
+    border-radius: 4px;
+    height: 5.2vh;
+    background-color: #d5a4cf;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+}
+
+@keyframes colorChange{
+    0%{
+        background-color: #d5a4cf;
+        color: black;
+    }
+	100%{
+        background-color: #f8d2ee;
+        color: rgb(48, 48, 48);
+        
+	}
+}
+.card-buttons:hover{
+    animation: 0.7s colorChange 0s forwards;
+}
+
+.home-flex{
+    display: flex;
+    
+}

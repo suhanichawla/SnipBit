@@ -1,9 +1,17 @@
 import React from 'react'
 
-export default function Authform({type}) {
+export default function Authform(props) {
+    var {isSignup,buttonText,toggleMessage,toggleMessageU}=props;
     return (
-        <div className="mainpage-form">
+        <div className={`mainpage-form ${isSignup ? 'mainpage-form-long' : ''}`}>
             <form>
+            {isSignup && (<div className="authform-whole-input">
+                <label className="authform-label" htmlFor="name" >Name:</label>
+                <div>          
+                    <input onChange={()=>{}} type="text" className="authform-inp" id="name" placeholder="Enter Name" name="name" />
+                </div>
+            </div>
+            )}
                 <div className="authform-whole-input">
             <label className="authform-label" htmlFor="email" >Email:</label>
                 <div>          
@@ -19,11 +27,11 @@ export default function Authform({type}) {
                 <div>
             <label className="authform-label" htmlFor="email" ></label>
                 <div className="authform-whole-input">          
-                    <button className="long-button" type="button">LOGIN</button>
+                    <button className="long-button" type="button">{buttonText}</button>
                 </div>
                 </div>
                 <br></br>
-            <p className="toggle-auth">Don't have an account? <u>Create one!</u></p>
+            <p className="toggle-auth">{toggleMessage} <u>{toggleMessageU}</u></p>
                 
             {/* <div class="form-group">
                 <label class="control-label" style={{color:"white"}} htmlFor="email" >Email:</label>
