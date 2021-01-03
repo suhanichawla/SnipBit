@@ -2,8 +2,14 @@ import React from 'react'
 import './sidebar.css'
 import Avatar from '../assets/avatar.jfif'
 import {Link} from 'react-router-dom';
+import {logout} from '../store/actions/auth'
+import {Switch,Route,withRouter,Redirect} from "react-router-dom"
+import {connect} from "react-redux";
 
-export default function Sidebar() {
+function Sidebar(props) {
+    function logout(){
+        props.logout();
+    }
     return (
         <div style={{width: "20%"}}>
             <header id="header">
@@ -27,7 +33,7 @@ export default function Sidebar() {
                 <li><a href="#about"><i class="bx bx-user"></i> <span>My Snips</span></a></li>
                 <li><a href="#skills"><i class="bx bx-book-content"></i> <span>Skills</span></a></li>
                 <li><a href="#services"><i class="bx bx-server"></i> Projects</a></li>
-                <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                <li><a href="#resume"><i class="bx bx-file-blank"></i> <span onClick={()=>logout()}>Logout</span></a></li>
 
                 </ul>
             </nav>
@@ -39,3 +45,5 @@ export default function Sidebar() {
         </div>
     )
 }
+
+export default withRouter(connect(null,{logout})(Sidebar));

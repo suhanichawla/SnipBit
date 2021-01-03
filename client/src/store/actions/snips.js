@@ -42,14 +42,14 @@ export const fetchSnips =  () => (dispatch, getState)=> {
         });
   };
 
-  export const removeMessages=(user_id,message_id)=>{
-    return dispatch => {
-      return apiCall("delete", `/api/users/${user_id}/messages/${message_id}`)
+  export const deleteSnip=(snipID)=> (dispatch, getState)=>{
+      let {currentUser}=getState();
+      let id=currentUser.user._id;
+      return apiCall("delete", `/api/users/${id}/snips/${snipID}`)
         .then(res => {
           dispatch(remove(message_id));
         })
         .catch(err => {
           dispatch(addError(err.message));
         });
-  }
 }

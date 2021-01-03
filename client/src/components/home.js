@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 import './home.css'
 import Sidebar from './sidebar'
 import Intro from './intro'
-import {fetchSnips} from '../store/actions/snips'
+import {fetchSnips,deleteSnip} from '../store/actions/snips'
 import {Switch,Route,withRouter,Redirect,Link} from "react-router-dom"
 import {connect} from "react-redux";
 
@@ -14,6 +14,10 @@ function Home(props) {
         })
         
     },[]);
+    async function handleDelete(snipID){
+        await props.deleteSnip(snipID)
+        props.fetchSnips()
+    }
     var mysnips=[];
     for (let i = 0; i < snips.length; i+=2) {
         if(i+1<snips.length){
@@ -41,7 +45,7 @@ function Home(props) {
                     >
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
-                    <a  href="#" className="btn btn-primary card-buttons">Delete this snip</a>
+                    <a  onClick={()=>handleDelete(currPair[0]._id)} href="#" className="btn btn-primary card-buttons">Delete this snip</a>
                     </div>
                 </div>
                 </div>
@@ -63,7 +67,7 @@ function Home(props) {
                     >
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
-                    <a  href="#" className="btn btn-primary card-buttons">Delete this snip</a>
+                    <a  onClick={()=>handleDelete(currPair[0]._id)} href="#" className="btn btn-primary card-buttons">Delete this snip</a>
                     </div>
                 </div>
                 </div>
@@ -82,7 +86,7 @@ function Home(props) {
                     >
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
-                    <a  href="#" className="btn btn-primary card-buttons">Delete this snip</a>
+                    <a  onClick={()=>handleDelete(currPair[1]._id)} href="#" className="btn btn-primary card-buttons">Delete this snip</a>
                     </div>
                 </div>
                 </div>
@@ -123,4 +127,4 @@ function mapStateToProps(state){
     })
   }
 
-export default withRouter(connect(mapStateToProps,{fetchSnips})(Home));
+export default withRouter(connect(mapStateToProps,{fetchSnips,deleteSnip})(Home));
