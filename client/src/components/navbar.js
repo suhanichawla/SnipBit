@@ -29,6 +29,26 @@ class Navbar extends Component{
     handleChange=(e)=>{
         this.setState({[e.target.name]:e.target.value})
     }
+
+    copyRoomCode=()=>{
+        let input = document.createElement("input");
+      
+        input.style.opacity="0";
+        input.style["pointer-events"] = "none";
+        document.body.appendChild(input);
+        input.value = window.location.pathname;
+        input.focus();
+        input.select();
+        document.execCommand('copy');
+        // var tooltip = document.getElementById("myTooltip");
+        // tooltip.innerHTML = "Copied code"
+    }
+
+    // tooltipTextChange=()=>{
+    //     var tooltip = document.getElementById("myTooltip");
+    //     tooltip.innerHTML = "Copy to clipboard";
+    // }
+
     render(){
         console.log("path",this.props.location.pathname)
         return(
@@ -50,10 +70,12 @@ class Navbar extends Component{
                         }
                     
                     </div>
-                    {/* <ul className="nav navbar-nav navbar-left">
-                        <li>home</li>
-                    </ul> */}
                         <ul className="nav navbar-nav navbar-right">
+                        {this.props.onCollab && (
+                            <>
+                        <a onClick={()=>this.copyRoomCode()} onMouseOut={()=>{}} href="#" className="btn btn-primary card-buttons nav-buttons">{"Copy Room Code"}</a>
+                            </>
+                        )}
                             <Link
                                 to={`/`}
                             ><a onClick={()=>this.props.onSave(this.state.fileName)} href="#" className="btn btn-primary card-buttons nav-buttons">{"Save & Exit"}</a>

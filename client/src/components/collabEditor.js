@@ -87,7 +87,7 @@ function CollabEditor(props) {
 
   return (
     <div className="App">
-      <Navbar file={newFlag ? 'untitled' : data.name} onSave={saveDocument}/>
+      <Navbar onCollab file={newFlag ? 'untitled' : data.name} onSave={saveDocument}/>
       <div>
       <div className="pane top-pane">
         <Editor 
