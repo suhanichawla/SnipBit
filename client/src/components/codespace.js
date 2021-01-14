@@ -39,7 +39,7 @@ function Codespace(props) {
         console.log("snip save",res)
       })
     }else{
-      props.saveSnip({snipID:data._id,code,name:data.name}).then((res)=>{
+      props.saveSnip({snipID:data._id,code,name:fileName}).then((res)=>{
         console.log("snip save",res)
       })
     }

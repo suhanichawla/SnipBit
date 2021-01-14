@@ -124,11 +124,11 @@ function Home(props) {
     return (
         <div className="home-flex">
             <Sidebar />
-            <div>
+            <div class="home-parent">
                 <div className="home-heading">
                 <h2>Your code snippets</h2>
                 </div>
-                {snipList && snipList.length!=0 ? snipList : <div>wait</div>}
+                {snipList && snipList.length!=0 ? snipList : <div className="emptyAcc"><br/><br/>Your code snippets will apear here. Get coding!</div>}
             </div>
 
             

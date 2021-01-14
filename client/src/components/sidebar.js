@@ -11,7 +11,9 @@ function Sidebar(props) {
         props.logout();
     }
     return (
+        <>
         <div style={{width: "20%"}}>
+            
             <header id="header">
             <div className="d-flex flex-column">
 
@@ -29,11 +31,9 @@ function Sidebar(props) {
 
             <nav className="nav-menu">
                 <ul>
-                <li className="active"><a href="#hero"><i className="bx bx-home"></i><span> <Link to="/editor">New Snip</Link></span></a></li>
-                <li><a href="#about"><i className="bx bx-user"></i> <span>My Snips</span></a></li>
-                <li><a href="#skills"><i className="bx bx-book-content"></i> <span>Skills</span></a></li>
-                <li><a href="#services"><i className="bx bx-server"></i> Projects</a></li>
-                <li><a href="#resume"><i className="bx bx-file-blank"></i> <span onClick={()=>logout()}>Logout</span></a></li>
+                <li><a><i className="bx bx-home"></i><span> <Link to="/editor">New Snip</Link></span></a></li>
+                <li><a><i className="bx bx-home"></i><span> <Link to="/editor">About Us</Link></span></a></li>
+                <li><a><i className="bx bx-file-blank"></i> <span onClick={()=>logout()}><Link>Logout</Link></span></a></li>
 
                 </ul>
             </nav>
@@ -43,6 +43,7 @@ function Sidebar(props) {
             </header>
             
         </div>
+        </>
     )
 }
 

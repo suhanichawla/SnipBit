@@ -116,5 +116,33 @@ body{
         
 	}
 }
+
+@media only screen and (max-width: 1000px) {
+    .mainpage-form{
+        width:50%;
+        min-height: 60%;
+    }
+    .mainpage-form-long{
+        width:50%;
+        min-height: 70%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .mainpage-form{
+        width:50%;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .mainpage-form{
+        min-height:70%;
+    }
+    .mainpage-form-long{
+        min-height:65%;
+    }
+}
+  
 /* fbf4f9 */
 /* d5a4cf */
+

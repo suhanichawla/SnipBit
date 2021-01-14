@@ -12,6 +12,14 @@ body {
     flex-wrap: wrap;
 }
 
+
+.emptyAcc{
+    color:white;
+    text-align: center;
+    font-size: medium;
+    margin-left: 5vw;
+}
+
 .homeDiv .card{
     color: black;
     width: 47%;
