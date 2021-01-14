@@ -3,10 +3,11 @@ import './home.css'
 import Sidebar from './sidebar'
 import Intro from './intro'
 import {fetchSnips,deleteSnip} from '../store/actions/snips'
-import {Switch,Route,withRouter,Redirect,Link} from "react-router-dom"
+import {Switch,Route,withRouter,Redirect,Link,useHistory} from "react-router-dom"
 import {connect} from "react-redux";
 
 function Home(props) {
+    var history=useHistory();
     var {currentUser,snips}=props
     useEffect(() => {
         props.fetchSnips().then(()=>{
@@ -14,6 +15,7 @@ function Home(props) {
         })
         
     },[]);
+
     async function handleDelete(snipID){
         await props.deleteSnip(snipID)
         props.fetchSnips()
@@ -45,6 +47,14 @@ function Home(props) {
                     >
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
+                    <Link to={{
+                        pathname: `/editorCollab/${Math.floor(Math.random() * 10)}`,
+                        data: currPair[0]
+                    }}
+                    >
+                    <a href="#" className="btn btn-primary card-buttons">Collaborate</a>
+                    </Link>
+                    
                     <a  onClick={()=>handleDelete(currPair[0]._id)} href="#" className="btn btn-primary card-buttons">Delete this snip</a>
                     </div>
                 </div>
@@ -67,6 +77,13 @@ function Home(props) {
                     >
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
+                    <Link to={{
+                        pathname: `/editorCollab/${Math.floor(Math.random() * 10)}`,
+                        data: currPair[0]
+                    }}
+                    >
+                    <a href="#" className="btn btn-primary card-buttons">Collaborate</a>
+                    </Link>
                     <a  onClick={()=>handleDelete(currPair[0]._id)} href="#" className="btn btn-primary card-buttons">Delete this snip</a>
                     </div>
                 </div>
@@ -85,6 +102,13 @@ function Home(props) {
                     }}
                     >
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
+                    </Link>
+                    <Link to={{
+                        pathname: `/editorCollab/${Math.floor(Math.random() * 10)}`,
+                        data: currPair[1],
+                    }}
+                    >
+                    <a href="#" className="btn btn-primary card-buttons">Collaborate</a>
                     </Link>
                     <a  onClick={()=>handleDelete(currPair[1]._id)} href="#" className="btn btn-primary card-buttons">Delete this snip</a>
                     </div>

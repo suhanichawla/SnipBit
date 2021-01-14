@@ -9,6 +9,7 @@ import {authUser} from "../store/actions/auth"
 import {removeError} from "../store/actions/error"
 import Codespace from './codespace'
 import Homepage from "./homepage";
+import CollabEditor from "./collabEditor";
 const Main= props =>{
     var {currentUser}=props;
     return(
@@ -17,6 +18,7 @@ const Main= props =>{
     <Route exact path="/" render={props => <Homepage  currentUser={currentUser} {...props}/>}></Route>
     <Route exact path="/register" render={props => <Intro {...props} isSignup={true}/> }></Route>
     <Route exact path="/editor" render={props => <Codespace {...props}/>}></Route>
+    <Route exact path="/editorCollab/:id" render={props => <CollabEditor {...props}/>}></Route>
             </Switch>
         </div>
     )

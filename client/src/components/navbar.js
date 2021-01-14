@@ -7,6 +7,7 @@ import './navbar.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheck} from '@fortawesome/free-solid-svg-icons'
 
+
 import logo from '../assets/logowotext.png'
 class Navbar extends Component{
     constructor(){

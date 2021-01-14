@@ -47,7 +47,7 @@ export const fetchSnips =  () => (dispatch, getState)=> {
       let id=currentUser.user._id;
       return apiCall("delete", `/api/users/${id}/snips/${snipID}`)
         .then(res => {
-          dispatch(remove(message_id));
+          dispatch(remove(snipID));
         })
         .catch(err => {
           dispatch(addError(err.message));
