@@ -21,18 +21,13 @@ function Sidebar(props) {
                 <img src={Avatar} alt="" className="img-fluid rounded-circle" />
                 <h1 className="text-light"><a href="">Suhani Chawla</a></h1>
                 <div className="social-links mt-3 text-center">
-                <a target="_blank" href="https://twitter.com/SuhaniChawla9" className="twitter"><i className="bx bxl-twitter"></i></a>
-                <a target="_blank" href="https://www.instagram.com/suhani1746/" className="instagram"><i className="bx bxl-instagram"></i></a>
-                <a target="_blank" href="mailto:suhanichawla2000@gmail.com" className="instagram"><i className="bx bx-mail-send"></i></a>
-                <a target="_blank" href="https://github.com/suhanichawla" className="instagram"><i className="bx bxl-github"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/suhani-chawla-891919171/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
                 </div>
             </div>
 
             <nav className="nav-menu">
                 <ul>
                 <li><a><i className="bx bx-home"></i><span> <Link to="/editor">New Snip</Link></span></a></li>
-                <li><a><i className="bx bx-home"></i><span> <Link to="/editor">About Us</Link></span></a></li>
+                <li><a><i className="bx bx-home"></i><span> <Link to="/about">About Us</Link></span></a></li>
                 <li><a><i className="bx bx-file-blank"></i> <span onClick={()=>logout()}><Link>Logout</Link></span></a></li>
 
                 </ul>

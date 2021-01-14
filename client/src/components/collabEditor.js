@@ -22,6 +22,7 @@ function CollabEditor(props) {
   const [css,setCSS]=useState(codeData.css)
   const [js,setJs]=useState(codeData.js)
   const [srcDoc,setSrcDoc]=useState('')
+  const [userlist,setUserList]=useState([])
 
   useEffect( ()=>{
       // const { id } = useParams()
@@ -29,11 +30,11 @@ function CollabEditor(props) {
       //socket.emit("joinRoom",{username:"su"+Math.floor(Math.random()*20).name,room:id})
      // await 
         if(data){
-          socket.emit("joinRoom",{username:"su"+Math.floor(Math.random()*20).name,room:id,code:codeData})
+          socket.emit("joinRoom",{username:props.currentUser.name,room:id,code:codeData})
           // console.log("sending first set of data ")
           // socket.emit("code",{html,css,js})
         }else{
-          socket.emit("joinRoom",{username:"su"+Math.floor(Math.random()*20).name,room:id})
+          socket.emit("joinRoom",{username:props.currentUser.name,room:id})
         }
         socket.on("code-data", function(data){
             console.log("getting my data")
@@ -42,6 +43,11 @@ function CollabEditor(props) {
             setHtml(data.html)
             setCSS(data.css)
             setJs(data.js)
+        })
+
+        socket.on("roomUsers",({room,users})=>{
+          console.log("userlist",userlist)
+          setUserList(users);
         })
   },[])
 

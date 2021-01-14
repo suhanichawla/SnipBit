@@ -56,7 +56,7 @@ class Navbar extends Component{
                         <ul className="nav navbar-nav navbar-right">
                             <Link
                                 to={`/`}
-                            ><a onClick={()=>this.props.onSave(this.state.fileName)} href="#" className="btn btn-primary card-buttons nav-buttons">Save Snip</a>
+                            ><a onClick={()=>this.props.onSave(this.state.fileName)} href="#" className="btn btn-primary card-buttons nav-buttons">{"Save & Exit"}</a>
                             </Link>
                             <Link
                                 to={`/`}

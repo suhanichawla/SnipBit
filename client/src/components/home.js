@@ -5,7 +5,7 @@ import Intro from './intro'
 import {fetchSnips,deleteSnip} from '../store/actions/snips'
 import {Switch,Route,withRouter,Redirect,Link,useHistory} from "react-router-dom"
 import {connect} from "react-redux";
-
+import uuid from 'react-uuid'
 function Home(props) {
     var history=useHistory();
     var {currentUser,snips}=props
@@ -48,7 +48,7 @@ function Home(props) {
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
                     <Link to={{
-                        pathname: `/editorCollab/${Math.floor(Math.random() * 10)}`,
+                        pathname: `/editorCollab/${uuid()}`,
                         data: currPair[0]
                     }}
                     >
@@ -78,7 +78,7 @@ function Home(props) {
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
                     <Link to={{
-                        pathname: `/editorCollab/${Math.floor(Math.random() * 10)}`,
+                        pathname: `/editorCollab/${uuid()}`,
                         data: currPair[0]
                     }}
                     >
@@ -104,7 +104,7 @@ function Home(props) {
                     <a href="#" className="btn btn-primary card-buttons">Open</a>
                     </Link>
                     <Link to={{
-                        pathname: `/editorCollab/${Math.floor(Math.random() * 10)}`,
+                        pathname: `/editorCollab/${uuid()}`,
                         data: currPair[1],
                     }}
                     >

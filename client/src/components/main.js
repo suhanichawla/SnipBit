@@ -10,6 +10,7 @@ import {removeError} from "../store/actions/error"
 import Codespace from './codespace'
 import Homepage from "./homepage";
 import CollabEditor from "./collabEditor";
+import About from './about'
 const Main= props =>{
     var {currentUser}=props;
     return(
@@ -18,6 +19,7 @@ const Main= props =>{
     <Route exact path="/" render={props => <Homepage  currentUser={currentUser} {...props}/>}></Route>
     <Route exact path="/register" render={props => <Intro {...props} isSignup={true}/> }></Route>
     <Route exact path="/editor" render={props => <Codespace {...props}/>}></Route>
+    <Route exact path="/about" render={props => <About {...props}/>}></Route>
     <Route exact path="/editorCollab/:id" render={props => <CollabEditor {...props}/>}></Route>
             </Switch>
         </div>
