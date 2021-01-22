@@ -72,9 +72,9 @@ class Navbar extends Component{
                     </div>
                         <ul className="nav navbar-nav navbar-right">
                         {this.props.onCollab && (
-                            <>
-                        <a onClick={()=>this.copyRoomCode()} onMouseOut={()=>{}} href="#" className="btn btn-primary card-buttons nav-buttons">{"Copy Room Code"}</a>
-                            </>
+                            
+                        <a onClick={()=>this.copyRoomCode()} className="btn btn-primary card-buttons nav-buttons">{"Copy Room Code"}</a>
+                            
                         )}
                             <Link
                                 to={`/`}

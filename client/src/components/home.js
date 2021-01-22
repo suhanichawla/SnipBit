@@ -5,6 +5,7 @@ import Intro from './intro'
 import {fetchSnips,deleteSnip} from '../store/actions/snips'
 import {Switch,Route,withRouter,Redirect,Link,useHistory} from "react-router-dom"
 import {connect} from "react-redux";
+import moment from 'moment'
 import uuid from 'react-uuid'
 function Home(props) {
     var history=useHistory();
@@ -34,12 +35,13 @@ function Home(props) {
             return <div className="homeDiv">
             <div className="card">
                 <div className="card-header">
-                    {currPair[0].name}
+                    <b>{currPair[0].name}</b>
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <div>
+                    {/* <h5 className="card-title">Special title treatment</h5> */}
+                    <p className="card-text">Created: {moment(currPair[0].createdAt).fromNow()}</p>
+                    <p className="card-text">Updated: {moment(currPair[0].updatedAt).fromNow()}</p>
+                    <div className="button-collection">
                     <Link to={{
                         pathname: "/editor",
                         data: currPair[0]
@@ -64,12 +66,13 @@ function Home(props) {
             return <div className="homeDiv">
             <div className="card">
                 <div className="card-header">
-                    {currPair[0].name}
+                    <b>{currPair[0].name}</b>
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <div>
+                    {/* <h5 className="card-title">Special title treatment</h5> */}
+                    <p className="card-text">Created: {moment(currPair[0].createdAt).fromNow()}</p>
+                    <p className="card-text">Updated: {moment(currPair[0].updatedAt).fromNow()}</p>
+                    <div className="button-collection">
                     <Link to={{
                         pathname: "/editor",
                         data: currPair[0]
@@ -90,12 +93,13 @@ function Home(props) {
                 </div>
                 <div className="card">
                 <div className="card-header">
-                    {currPair[1].name}
+                    <b>{currPair[0].updatedAt + " "+currPair[0].createdAt}</b>
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <div>
+                    {/* <h5 className="card-title">Special title treatment</h5> */}
+                    <p className="card-text">Created: {moment(currPair[0].createdAt).fromNow()}</p>
+                    <p className="card-text">Last Updated: {moment(currPair[0].updatedAt).fromNow()}</p>
+                    <div className="button-collection">
                     <Link to={{
                         pathname: "/editor",
                         data: currPair[1]

@@ -1,6 +1,6 @@
 
 import {Link} from 'react-router-dom';
-
+import '../main.css'
 
 import React,{Component} from "react"
 
@@ -22,6 +22,7 @@ class Authform extends Component{
         e.preventDefault();
         const authType=this.props.isSignup ? "signup" :"signin";
         this.props.onAuth(authType,this.state).then(()=>{
+            console.log(this.props.history);
            this.props.history.push("/")
         })
         .catch(()=>{
@@ -60,7 +61,7 @@ class Authform extends Component{
                     </div>
                     </div>
                     <br></br>
-                <p className="toggle-auth">{toggleMessage} <Link to={isSignup ? "/" : "/register"}><u className="white-underline">{toggleMessageU}</u></Link></p>
+                <p className="toggle-auth">{toggleMessage} <Link to={isSignup ? "/login" : "/register"}><u className="white-underline">{toggleMessageU}</u></Link></p>
                     
                 
                 </form>

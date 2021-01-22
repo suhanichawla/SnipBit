@@ -19,7 +19,7 @@ function Sidebar(props) {
 
             <div className="profile">
                 <img src={Avatar} alt="" className="img-fluid rounded-circle" />
-                <h1 className="text-light"><a href="">Suhani Chawla</a></h1>
+                <h1 className="text-light"><a href="">{props.currentUser.user.name}</a></h1>
                 <div className="social-links mt-3 text-center">
                 </div>
             </div>
@@ -42,4 +42,10 @@ function Sidebar(props) {
     )
 }
 
-export default withRouter(connect(null,{logout})(Sidebar));
+function mapStateToProps(reduxState){
+    return {
+        currentUser:reduxState.currentUser
+    }
+}
+
+export default withRouter(connect(mapStateToProps,{logout})(Sidebar));

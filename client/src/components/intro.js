@@ -15,7 +15,7 @@ function Intro(props) {
             {isSignup ? (
                 <Authform onAuth={authUser} {...props} isSignup={true} buttonText="REGISTER" toggleMessage="Already have an account? " toggleMessageU="Sign in"/>)
                 :
-               ( <Authform onAuth={authUser} isSignup={false} buttonText="LOGIN" toggleMessage="Don't have an account? " toggleMessageU="Create one!"/>
+               ( <Authform onAuth={authUser} {...props} isSignup={false} buttonText="LOGIN" toggleMessage="Don't have an account? " toggleMessageU="Create one!"/>
             )}
             
         </div>

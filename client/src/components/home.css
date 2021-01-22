@@ -12,6 +12,9 @@ body {
     flex-wrap: wrap;
 }
 
+.button-collection{
+    margin-top: 2px;
+}
 
 .emptyAcc{
     color:white;
@@ -21,7 +24,7 @@ body {
 }
 
 .homeDiv .card{
-    color: black;
+    color: white;
     width: 47%;
     margin-left: 15px;
 }
@@ -39,9 +42,10 @@ body {
 .card-buttons{
     padding: 8px;
     margin-right: 15px;
+    margin-top: 5px;
     border-radius: 4px;
     height: 5.2vh;
-    background-color: #d5a4cf;
+    background-color: #ffd8df;
     color: black;
     min-width: 7vw;
     font-weight: bold;
@@ -49,23 +53,36 @@ body {
     border: none;
 }
 
+.home-parent{
+    width: 100%;
+}
+
+.card{
+    background: #19232C;
+    color:white;
+}
+
+.card-header{
+    background: #425256;
+    color:#f2f2f2;
+}
 .white-underline{
     color:white;
 }
 
 @keyframes colorChange{
     0%{
-        background-color: #d5a4cf;
+        background-color: #ffd8df;
         color: black;
     }
 	100%{
-        background-color: #f8d2ee;
-        color: rgb(48, 48, 48);
+        background-color: #425256;
         
 	}
 }
 .card-buttons:hover{
-    animation: 0.7s colorChange 0s forwards;
+    background-color: #425256;
+    /* animation: 0.7s colorChange 0s forwards !important; */
 }
 
 .home-flex{

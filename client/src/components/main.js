@@ -18,6 +18,7 @@ const Main= props =>{
             <Switch>
     <Route exact path="/" render={props => <Homepage  currentUser={currentUser} {...props}/>}></Route>
     <Route exact path="/register" render={props => <Intro {...props} isSignup={true}/> }></Route>
+    <Route exact path="/login" render={props => <Intro {...props} isSignup={false}/> }></Route>
     <Route exact path="/editor" render={props => <Codespace {...props}/>}></Route>
     <Route exact path="/about" render={props => <About {...props}/>}></Route>
     <Route exact path="/editorCollab/:id" render={props => <CollabEditor {...props}/>}></Route>
