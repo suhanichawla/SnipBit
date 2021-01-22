@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import './home.css'
 import Sidebar from './sidebar'
 import Intro from './intro'
@@ -7,7 +7,9 @@ import {Switch,Route,withRouter,Redirect,Link,useHistory} from "react-router-dom
 import {connect} from "react-redux";
 import moment from 'moment'
 import uuid from 'react-uuid'
+import About from './about'
 function Home(props) {
+    var [currentSection,changeCurrentSection]=useState(1);
     var history=useHistory();
     var {currentUser,snips}=props
     useEffect(() => {
@@ -16,6 +18,10 @@ function Home(props) {
         })
         
     },[]);
+
+    function displayCurrentSection(sectionNum){
+        changeCurrentSection(sectionNum)
+    }
 
     async function handleDelete(snipID){
         await props.deleteSnip(snipID)
@@ -127,13 +133,18 @@ function Home(props) {
     
     return (
         <div className="home-flex">
-            <Sidebar />
+            <Sidebar currentSectionHandler={(sectionNum)=>displayCurrentSection(sectionNum)}/>
+            {currentSection==2 ?
+            <About />
+            :
             <div class="home-parent">
                 <div className="home-heading">
                 <h2>Your code snippets</h2>
                 </div>
                 {snipList && snipList.length!=0 ? snipList : <div className="emptyAcc"><br/><br/>Your code snippets will apear here. Get coding!</div>}
             </div>
+            }
+            
 
             
         </div>

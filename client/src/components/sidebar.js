@@ -27,8 +27,9 @@ function Sidebar(props) {
             <nav className="nav-menu">
                 <ul>
                 <li><a><i className="bx bx-home"></i><span> <Link to="/editor">New Snip</Link></span></a></li>
-                <li><a><i className="bx bx-home"></i><span> <Link to="/about">About Us</Link></span></a></li>
-                <li><a><i className="bx bx-file-blank"></i> <span onClick={()=>logout()}><Link>Logout</Link></span></a></li>
+                <li><a><i className="bx bx-home"></i><span> <Link onClick={()=>props.currentSectionHandler(1)}>My Snips</Link></span></a></li>
+                <li><a><i className="bx bx-home"></i><span> <Link onClick={()=>props.currentSectionHandler(2)}>About Us</Link></span></a></li>
+                <li><a><i className="bx bx-file-blank"></i> <span onClick={()=>logout()}><Link >Logout</Link></span></a></li>
 
                 </ul>
             </nav>
