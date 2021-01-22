@@ -99,12 +99,12 @@ function Home(props) {
                 </div>
                 <div className="card">
                 <div className="card-header">
-                    <b>{currPair[0].updatedAt + " "+currPair[0].createdAt}</b>
+                    <b>{currPair[1].name}</b>
                 </div>
                 <div className="card-body">
                     {/* <h5 className="card-title">Special title treatment</h5> */}
-                    <p className="card-text">Created: {moment(currPair[0].createdAt).fromNow()}</p>
-                    <p className="card-text">Last Updated: {moment(currPair[0].updatedAt).fromNow()}</p>
+                    <p className="card-text">Created: {moment(currPair[1].createdAt).fromNow()}</p>
+                    <p className="card-text">Last Updated: {moment(currPair[1].updatedAt).fromNow()}</p>
                     <div className="button-collection">
                     <Link to={{
                         pathname: "/editor",
