@@ -17,9 +17,7 @@ function updateRoomCode(room,code){
 function joinUserToExistingRoom(id,username,room){
     const user={id,username,room}
     users.push(user)
-    //array1.find(element => element > 10);
     const currroom=rooms.find(element => element.room == room);
-    console.log("currroom is",currroom.code)
     return {user,code:currroom.code}
 }
 function getCurrentUser(id){
