@@ -31,12 +31,13 @@ class Navbar extends Component{
     }
 
     copyRoomCode=()=>{
+        var prefix="http://localhost:3000";
         let input = document.createElement("input");
       
         input.style.opacity="0";
         input.style["pointer-events"] = "none";
         document.body.appendChild(input);
-        input.value = window.location.pathname;
+        input.value = prefix+window.location.pathname;
         input.focus();
         input.select();
         document.execCommand('copy');

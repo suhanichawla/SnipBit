@@ -8,7 +8,7 @@ export default function About() {
     return (
         <div className="aboutus">
             <img src={AboutImg} height="400px" width="600px" />
-            <div style={{height:"50px"}}></div>
+            <div style={{height:"20px"}}></div>
             <div>
                 <h3>SnipBit</h3>
                 <br/>

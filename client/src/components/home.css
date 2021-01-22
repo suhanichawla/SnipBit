@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 body {
     margin: 0;
     background-color: #040b14;
@@ -21,6 +22,7 @@ body {
     text-align: center;
     font-size: medium;
     margin-left: 5vw;
+    font-family: 'Balsamiq Sans', cursive;
 }
 
 .homeDiv .card{
@@ -38,6 +40,7 @@ body {
     text-align: center;
     color: white;
     margin-top: 10px;
+    font-family: 'Balsamiq Sans', cursive;
 }
 .card-buttons{
     padding: 8px;

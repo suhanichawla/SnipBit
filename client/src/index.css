@@ -13,6 +13,13 @@ body {
   background-color: white;
 }
 
+.btn-primary.focus, .btn-primary:focus {
+  color: #fff;
+  background-color: #425256;
+  border-color: #425256;
+  box-shadow: none;
+}
+
 .editor-container {
   flex-grow: 1;
   flex-basis: 0;
