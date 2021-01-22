@@ -31,7 +31,10 @@ class Authform extends Component{
     }
     render(){
         
-        var {isSignup,buttonText,toggleMessage,toggleMessageU}=this.props;
+        var {isSignup,buttonText,toggleMessage,toggleMessageU,error,history,removeError}=this.props;
+        history.listen(()=>{
+            removeError();
+        })
         return (
             <div className={`mainpage-form ${isSignup ? 'mainpage-form-long' : ''}`}>
                 <form onSubmit={this.handleSubmit}>
@@ -62,7 +65,7 @@ class Authform extends Component{
                     </div>
                     <br></br>
                 <p className="toggle-auth">{toggleMessage} <Link to={isSignup ? "/login" : "/register"}><u className="white-underline">{toggleMessageU}</u></Link></p>
-                    
+                {error.message && <div className="alert alert-danger">{error.message}</div>}
                 
                 </form>
             </div>

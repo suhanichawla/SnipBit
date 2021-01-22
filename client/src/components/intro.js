@@ -13,9 +13,9 @@ function Intro(props) {
         <div className="main-body">
             <img className="main-image" src={Logo} />
             {isSignup ? (
-                <Authform onAuth={authUser} {...props} isSignup={true} buttonText="REGISTER" toggleMessage="Already have an account? " toggleMessageU="Sign in"/>)
+                <Authform onAuth={authUser} {...props} removeError={removeError} error={errors} isSignup={true} buttonText="REGISTER" toggleMessage="Already have an account? " toggleMessageU="Sign in"/>)
                 :
-               ( <Authform onAuth={authUser} {...props} isSignup={false} buttonText="LOGIN" toggleMessage="Don't have an account? " toggleMessageU="Create one!"/>
+               ( <Authform onAuth={authUser} {...props} removeError={removeError} error={errors} isSignup={false} buttonText="LOGIN" toggleMessage="Don't have an account? " toggleMessageU="Create one!"/>
             )}
             
         </div>

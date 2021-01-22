@@ -2,7 +2,7 @@ require("dotenv").config();
 var express=require("express")
 var app=express()
 var bodyParser=require("body-parser")
-var cors=require("cors")
+// var cors=require("cors")
 var bot="mybot"
 var server = require('http').Server(app);
 var io = require('socket.io')(server, {origins:'localhost:*'});
@@ -27,6 +27,7 @@ io.on('connection', (socket)=> {
             socket.join(user.room)
             console.log("user has joined new room")
             console.log("room joined is",room)
+            
         }else{
             var {username,room}=data;
             const {user,code}=joinUserToExistingRoom(socket.id,username,room)
@@ -78,7 +79,7 @@ io.on('connection', (socket)=> {
 })
 
 
-app.use(cors())
+// app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use("/api/auth",authRoutes)
