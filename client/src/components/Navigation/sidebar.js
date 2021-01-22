@@ -1,8 +1,8 @@
 import React from 'react'
 import './sidebar.css'
-import Avatar from '../assets/avatar.jfif'
+import Avatar from '../../assets/avatar.jfif'
 import {Link} from 'react-router-dom';
-import {logout} from '../store/actions/auth'
+import {logout} from '../../store/actions/auth'
 import {Switch,Route,withRouter,Redirect} from "react-router-dom"
 import {connect} from "react-redux";
 

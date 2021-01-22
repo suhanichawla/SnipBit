@@ -2,15 +2,13 @@ import React from "react"
 import {Switch,Route,withRouter,Redirect} from "react-router-dom"
 import {connect} from "react-redux";
 import Authform from "./Auth/authform";
-import Intro from "./intro";
-import Editor from './editor';
-import Home from './home'
+import Intro from "./Auth/intro";
 import {authUser} from "../store/actions/auth"
 import {removeError} from "../store/actions/error"
-import Codespace from './codespace'
-import Homepage from "./homepage";
-import CollabEditor from "./collabEditor";
-import About from './about'
+import Codespace from './Editors/codespace'
+import Homepage from "./Home/homepage";
+import CollabEditor from "./Editors/collabEditor";
+import About from './About/about'
 const Main= props =>{
     var {currentUser}=props;
     return(

@@ -1,9 +1,9 @@
 import React from 'react'
-import './main.css';
-import Logo from '../assets/logo.png'
-import Authform from './Auth/authform';
-import {authUser} from "../store/actions/auth"
-import {removeError} from "../store/actions/error"
+import '../main.css';
+import Logo from '../../assets/logo.png'
+import Authform from './authform';
+import {authUser} from "../../store/actions/auth"
+import {removeError} from "../../store/actions/error"
 import {Switch,Route,withRouter,Redirect} from "react-router-dom"
 import {connect} from "react-redux";
 

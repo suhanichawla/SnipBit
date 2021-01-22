@@ -1,13 +1,13 @@
 import React,{useEffect,useState} from 'react'
 import './home.css'
-import Sidebar from './sidebar'
-import Intro from './intro'
-import {fetchSnips,deleteSnip} from '../store/actions/snips'
+import Sidebar from '../Navigation/sidebar'
+import Intro from '../Auth/intro'
+import {fetchSnips,deleteSnip} from '../../store/actions/snips'
 import {Switch,Route,withRouter,Redirect,Link,useHistory} from "react-router-dom"
 import {connect} from "react-redux";
 import moment from 'moment'
 import uuid from 'react-uuid'
-import About from './about'
+import About from '../About/about'
 function Home(props) {
     var [currentSection,changeCurrentSection]=useState(1);
     var history=useHistory();

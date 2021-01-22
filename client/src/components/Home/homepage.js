@@ -1,9 +1,9 @@
 import React from 'react'
 import Home from './home';
-import Intro from './intro'
+import Intro from '../Auth/intro'
 import {Switch,Route,withRouter,Redirect,Link} from "react-router-dom"
 import {connect} from 'react-redux'
-import Cover from './cover';
+import Cover from '../coverPage';
 function Homepage({currentUser}) {
     if(!currentUser.isAuth){
         return(
