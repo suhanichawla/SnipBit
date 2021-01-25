@@ -48,7 +48,7 @@ class Authform extends Component{
                     <div className="authform-whole-input">
                 <label className="authform-label" htmlFor="email" >Email:</label>
                     <div>          
-                        <input onChange={this.handleChange} type="text" className="authform-inp" id="email" placeholder="Enter Email" name="email" />
+                        <input autocomplete="off" onChange={this.handleChange} type="text" className="authform-inp" id="email" placeholder="Enter Email" name="email" />
                     </div>
                     </div>
                     <div className="authform-whole-input">
