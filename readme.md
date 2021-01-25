@@ -41,18 +41,18 @@ Go to localhost:3000 to see the website in action.
 3. Database: MongoDB
 
 ## Screenshots
-<span>
+<span text-align="center">
 <img src="/assets/home.png" width="300px" height="150px">
 </span>
 <br>
 <span>
-<img src="/Screenshots/auth.png" width="300px" height="150px">
-<img src="/Screenshots/homepage.png" width="300px" height="150px">
+<img src="/assets/auth.png" width="300px" height="150px">
+<img src="/assets/homepage.png" width="300px" height="150px">
 </span>
 <br>
 <span>
-<img src="/Screenshots/editor.png" width="300px" height="150px">
-<img src="/Screenshots/colab.png" width="300px" height="150px">
+<img src="/assets/editor.png" width="300px" height="150px">
+<img src="/assets/colab.png" width="300px" height="150px">
 </span>
 
 
