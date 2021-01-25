@@ -55,4 +55,5 @@ Go to localhost:3000 to see the website in action.
 <img src="/assets/colab.png" width="300px" height="150px">
 </span>
 
-
+## Try it out
+Check out the [website](https://snipbit.herokuapp.com)
